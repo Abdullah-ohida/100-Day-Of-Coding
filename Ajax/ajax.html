@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="user">Get user</button>
+    <ul class="list"></ul>
+    <br><br>
+    <button class="users">Get users</button>
+    <ul class="lists"></ul>
+
+    <script>
+        document.querySelector('.user').addEventListener('click', loadUser);
+         document.querySelector('.users').addEventListener('click', loadUsers)
+
+        function loadUser(){
+           
+            let xhr = new XMLHttpRequest();
+
+            xhr.open("GET", "/web/user.json", true);
+
+            xhr.onload = function(){
+                if(this.status == 200){
+
+                    let user = JSON.parse(this.responseText)
+                    let output = "";
+                    output += `<li> Name: ${user.Firstname} <li> <li>Last: ${user.Lastname} <li> 
+                        <li>Age ${user.age} <li>
+                            <li>Profession: ${user.Profession} <li>`
+
+                                 const list = document.querySelector('.list');
+                    list.innerHTML = output
+                }
+
+               
+            }
+            xhr.send();
+        }
+
+         function loadUsers() {
+                let xhr = new XMLHttpRequest();
+                xhr.open("GET", "/web/users.json", true);
+                xhr.onload = function () {
+                    if (this.status == 200) {
+                        let users = JSON.parse(this.responseText);
+                        // console.log(users);/
+                        let output = "";
+                        for(item in users.cars){
+                            // console.log(users.cars[item].model)
+                           output += `<h2>${users.cars[item].name}</h2>`
+                           for(i in users.cars[item].models){
+                               output += `<ul>
+                               <li>${users.cars[item].models[i]}</li>
+                               </ul>`
+                           }
+                        }
+                        const lists = document.querySelector('.lists');
+                        lists.innerHTML = output;
+                    }
+
+                }
+                xhr.send();
+            }
+    </script>
+</body>
+</html>

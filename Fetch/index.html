@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Introduction to Fetch API</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="display-4 mb-4">Fetch API Sandbox</h1>
+        <div class="d-flex mb-4">
+            <button class="btn-text btn btn-primary mr-4 ">Get text</button>
+            <button class="btn-user  btn btn-success mr-4">Get user</button>
+            <button class="btn-post  btn btn-warning mr-4">Get post</button>
+            <!-- <button class="marvel btn btn-danger mr-4">Get marvelt</button> -->
+        </div>
+        <hr>
+        <!-- form -->
+        <form action="" class="addpost">
+            <div class="form-group">
+                <input type="text" id="title" placeholder="title" class="form-control">
+            </div>
+
+            <div  class= "form-group">
+                <textarea id="body" placeholder="body title" class="form-control"></textarea>
+            </div>
+            <input type="submit" value="submit" class="btn btn-secondary">
+        </form>
+
+        <div class="output"></div>
+    </div>
+    <!--  -->
+    <script src="script.js"></script>
+</body>
+
+</html>
