@@ -9,13 +9,13 @@ function setQuery(e) {
 
 const api = {
     key: "310512ea6b5adad8650d365563d9c980",
-    base: 'http://api.weatherstack.com/',
+    base: 'https://api.weatherstack.com/',
 }
 
 let currenttate = "lagos";
 
 window.addEventListener("DOMContentLoaded", function(){
-    getResult(currenttate)
+    getResult(currenttate);
     // displayResults(currentstate)
 })
 
