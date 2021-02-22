@@ -18,6 +18,13 @@ body{
     border-radius: 5px;
 }
 
+h1{
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 1rem;
+    text-decoration: underline;
+}
+
 .calc-button{
     background: rgba(0, 0, 0);
     padding: 30px;
